@@ -18,6 +18,8 @@ class Album {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+
     public function addAlbum($title, $artist_id, $price) {
         $stmt = $this->db->prepare("INSERT INTO albums (title, artist_id, price) VALUES (?, ?, ?)");
         return $stmt->execute([$title, $artist_id, $price]);
