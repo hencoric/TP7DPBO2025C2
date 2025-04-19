@@ -1,6 +1,6 @@
 
 
-# **DESAIN**
+# **Desain**
 
 ![image](https://github.com/user-attachments/assets/76e128cb-e022-4bb6-a5dc-5d6694e4c78a)
 
@@ -95,3 +95,6 @@ Sistem ini merupakan aplikasi manajemen penjualan album musik berbasis PHP dan O
 - Class Album dan Artist memiliki form pencarian (`search`).
 - Parameter dikirim melalui URL dan digunakan di query SQL (LIKE).
 - Diterapkan di metode `getAllAlbums()` dan `getAllArtists()`.
+- 
+
+# **Dokumentasi**
