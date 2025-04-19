@@ -7,7 +7,7 @@ class Sale {
     }
 
     public function getAllSales() {
-        $stmt = $this->db->prepare("SELECT sales.id, albums.title, sales.quantity, sales.sale_date 
+        $stmt = $this->db->prepare("SELECT sales.id, sales.album_id, albums.title, sales.quantity, sales.sale_date 
                                     FROM sales
                                     JOIN albums ON sales.album_id = albums.id");
         $stmt->execute();
