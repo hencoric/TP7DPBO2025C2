@@ -101,4 +101,7 @@ Sistem ini merupakan aplikasi manajemen penjualan album musik berbasis PHP dan O
 
 # **Dokumentasi**
 
-![Demo](Screenrecord/tp8record.mp4)
+https://github.com/user-attachments/assets/cc81695e-1d74-4229-9c56-495908a49121
+
+
+
