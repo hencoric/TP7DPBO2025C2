@@ -39,12 +39,13 @@
     <h3>Edit Sale</h3>
     <form method="POST">
         <input type="hidden" name="id" value="<?= $saleToEdit['id'] ?>">
-        <select name="id" required>
+        <select name="album_id" required>
             <?php foreach ($album->getAllAlbums() as $a): ?>
-                <option value="<?= $a['id'] ?>" <?= $saleToEdit['id'] == $a['id'] ? 'selected' : '' ?>><?= $a['title'] ?></option>
+                <option value="<?= $a['id'] ?>" <?= $saleToEdit['album_id'] == $a['id'] ? 'selected' : '' ?>><?= $a['title'] ?></option>
             <?php endforeach; ?>
         </select>
         <input type="number" name="quantity" value="<?= $saleToEdit['quantity'] ?>" required>
         <button type="submit" name="edit_sale">Update Sale</button>
     </form>
+
 <?php endif; ?>
