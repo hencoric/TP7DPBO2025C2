@@ -8,8 +8,7 @@ class Artist {
 
     public function getAllArtists($search = '')
     {
-        $sql = "SELECT * FROM artists WHERE name LIKE :search";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $this->db->prepare("SELECT * FROM artists WHERE name LIKE :search");
         $stmt->execute(['search' => '%' . $search . '%']);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
