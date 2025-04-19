@@ -6,7 +6,7 @@ class Artist {
         $this->db = (new Database())->conn;
     }
 
-    public function getAllArtists($search = '')
+    public function getAllArtists($search)
     {
         $stmt = $this->db->prepare("SELECT * FROM artists WHERE name LIKE :search");
         $stmt->execute(['search' => '%' . $search . '%']);
