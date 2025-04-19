@@ -7,10 +7,9 @@ class Sale {
     }
 
     public function getAllSales() {
-        $query = "SELECT sales.id, albums.title, sales.quantity, sales.sale_date 
-                  FROM sales
-                  JOIN albums ON sales.album_id = albums.id";
-        $stmt = $this->db->prepare($query);
+        $stmt = $this->db->prepare("SELECT sales.id, albums.title, sales.quantity, sales.sale_date 
+                                    FROM sales
+                                    JOIN albums ON sales.album_id = albums.id");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
