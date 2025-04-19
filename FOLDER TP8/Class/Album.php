@@ -8,7 +8,7 @@ class Album {
         $this->db = (new Database())->conn;
     }
 
-    public function getAllAlbums($search = '')
+    public function getAllAlbums($search)
     {
         $stmt = $this->db->prepare("SELECT albums.id, albums.title, artists.name AS artist_name, albums.price 
                 FROM albums 
