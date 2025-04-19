@@ -14,32 +14,32 @@ Sistem ini merupakan aplikasi manajemen penjualan album musik berbasis PHP dan O
 
 ### `Album.php`
 - **Untuk:** Mengelola data album musik.
-- **Properti:** `title`, `artist_id`, `price`.
+- **Properti:** title, artist_id, price.
 - **Fungsi:**
-  - `getAllAlbums($search)` – Menampilkan semua album, dengan dukungan pencarian.
-  - `addAlbum($title, $artist_id, $price)` – Menambahkan album baru.
-  - `editAlbum($id, $title, $artist_id, $price)` – Mengedit album.
-  - `deleteAlbum($id)` – Menghapus album.
+  - getAllAlbums($search) – Menampilkan semua album, dengan dukungan pencarian.
+  - addAlbum($title, $artist_id, $price) – Menambahkan album baru.
+  - editAlbum($id, $title, $artist_id, $price) – Mengedit album.
+  - deleteAlbum($id) – Menghapus album.
 
 ### `Artist.php`
 - **Untuk:** Mengelola data artis/pencipta album.
 - **Properti:** `name`.
 - **Fungsi:**
-  - `getAllArtists($search)` – Menampilkan semua artis, dengan dukungan pencarian.
-  - `addArtist($name)` – Menambahkan artis baru.
-  - `editArtist($id, $name)` – Mengubah data artis.
-  - `deleteArtist($id)` – Menghapus data artis.
+  - getAllArtists($search) – Menampilkan semua artis, dengan dukungan pencarian.
+  - addArtist($name) – Menambahkan artis baru.
+  - editArtist($id, $name) – Mengubah data artis.
+  - deleteArtist($id) – Menghapus data artis.
 
 ### `Sale.php`
 - **Untuk:** Mengelola transaksi penjualan album.
 - **Properti:** `album_id`, `quantity`, `sale_date`.
 - **Fungsi:**
-  - `getAllSales()` – Menampilkan semua transaksi penjualan.
-  - `addSale($album_id, $quantity)` – Menambahkan data penjualan.
-  - `editSale($id, $album_id, $quantity)` – Mengubah data penjualan.
-  - `deleteSale($id)` – Menghapus transaksi penjualan.
+  - getAllSales() – Menampilkan semua transaksi penjualan.
+  - addSale($album_id, $quantity) – Menambahkan data penjualan.
+  - editSale($id, $album_id, $quantity) – Mengubah data penjualan.
+  - deleteSale($id) – Menghapus transaksi penjualan.
 
-### `Tambahan : Config\db.php`
+### `Tambahan : Config/db.php`
 - **Untuk:** koneksi database menggunakan PDO.
 
 ## **Struktur Database**
@@ -69,34 +69,34 @@ Sistem ini merupakan aplikasi manajemen penjualan album musik berbasis PHP dan O
 # **Alur Program**
 
 ### Inisialisasi
-- Program dimulai dari `index.php`.
-- Koneksi database diinisialisasi melalui Config\ `db.php`.
+- Program dimulai dari index.php.
+- Koneksi database diinisialisasi melalui Config/db.php.
 
 ### Navigasi dan Routing
-- URL menggunakan `?page=` untuk menentukan halaman yang dimuat (`albums`, `artists`, `sales`).
-- Parameter tambahan seperti `add`, `edit`, `delete` digunakan untuk aksi CRUD.
+- URL menggunakan ?page= untuk menentukan halaman yang dimuat (albums, artists, sales).
+- Parameter tambahan seperti add, edit, delete digunakan untuk aksi CRUD.
 
 ### Operasi CRUD
 
 #### Tambah
-- Menggunakan form HTML `POST`.
-- Data dikirim ke metode `addAlbum()`, `addArtist()`, atau `addSale()`.
+- Menggunakan form HTML POST.
+- Data dikirim ke metode addAlbum(), addArtist(), atau addSale().
 
 #### Lihat
-- Data ditampilkan dalam tabel HTML dari hasil `getAll*()`.
+- Data ditampilkan dalam tabel HTML dari hasil getAll*().
 
 #### Edit
 - Form terisi otomatis dengan data lama.
-- Data dikirim ke metode `edit*()` saat disubmit.
+- Data dikirim ke metode edit*() saat disubmit.
 
 #### Hapus
 - Konfirmasi penghapusan dilakukan via URL (GET).
-- Menggunakan metode `delete*()`.
+- Menggunakan metode delete*().
 
 ### Fungsi Pencarian
-- Class Album dan Artist memiliki form pencarian (`search`).
+- Class Album dan Artist memiliki form pencarian (search).
 - Parameter dikirim melalui URL dan digunakan di query SQL (LIKE).
-- Diterapkan di metode `getAllAlbums()` dan `getAllArtists()`.
+- Diterapkan di metode getAllAlbums() dan getAllArtists().
 
 
 # **Dokumentasi**
